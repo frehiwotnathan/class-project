@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudySpace</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>StudySpace</h1>
+
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#classes">Classes</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#notes">Notes</a>
+      <a href="#tests">Tests</a>
+    </nav>
+  </header>
+
+  <main id="dashboard" class="container">
+    <section class="welcome">
+      <p class="eyebrow">Student organizer</p>
+      <h2>Welcome back!</h2>
+      <p>Organize your classes, notes, assignments, and study plans in one place.</p>
+    </section>
+    <section class="summary-grid">
+        <div class="summary-card">
+            <span class="summary-number" id="totalClasses">0</span>
+            <span>Classes</span>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-number" id="pendingAssignments">0</span>
+            <span>Pending Assignments</span>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-number" id="upcomingTests">0</span>
+            <span>Upcoming Tests</span>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-number" id="totalNotes">0</span>
+            <span>Notes</span>
+        </div>
+        </section>
+
+        <section class="overview-section">
+        <div class="overview-card">
+            <h3>Next Assignments</h3>
+            <div id="dashboardAssignments"></div>
+        </div>
+
+        <div class="overview-card">
+            <h3>Upcoming Tests</h3>
+            <div id="dashboardTests"></div>
+        </div>
+        </section>
+
+    <section class="dashboard-grid">
+      <div class="card" id="classes">
+        <h3>My Classes</h3>
+
+        <form id="classForm">
+            <input
+            type="text"
+            id="className"
+            placeholder="Class name"
+            required
+            >
+
+            <input
+            type="text"
+            id="teacherName"
+            placeholder="Teacher name"
+            required
+            >
+
+            <input
+            type="text"
+            id="classSchedule"
+            placeholder="Schedule, for example: Mon/Wed 9:00 AM"
+            required
+            >
+
+            <button type="submit">Add Class</button>
+        </form>
+
+        <div id="classList"></div>
+        </div>
+
+
+        <div class="card" id="assignments">
+            <h3>Upcoming Assignments</h3>
+
+            <form id="assignmentForm">
+                <input
+                type="text"
+                id="assignmentTitle"
+                placeholder="Assignment title"
+                required
+                >
+
+                <select id="assignmentClass" required>
+                <option value="">Select a class</option>
+                </select>
+
+                <input
+                type="date"
+                id="assignmentDueDate"
+                required
+                >
+
+                <select id="assignmentPriority" required>
+                <option value="">Select priority</option>
+                <option value="High">High priority</option>
+                <option value="Medium">Medium priority</option>
+                <option value="Low">Low priority</option>
+                </select>
+
+                <button type="submit">Add Assignment</button>
+            </form>
+
+            <div id="assignmentList"></div>
+            </div>
+
+
+        <div class="card" id="tests">
+            <h3>Upcoming Tests</h3>
+
+            <form id="testForm">
+                <input
+                type="text"
+                id="testTitle"
+                placeholder="Test name"
+                required
+                >
+
+                <select id="testClass" required>
+                <option value="">Select a class</option>
+                </select>
+
+                <input
+                type="date"
+                id="testDate"
+                required
+                >
+
+                <input
+                type="text"
+                id="testTopics"
+                placeholder="Topics, separated by commas"
+                required
+                >
+
+                <button type="submit">Add Test</button>
+            </form>
+
+            <div id="testList"></div>
+            </div>
+
+
+        <div class="card" id="notes">
+        <h3>Recent Notes</h3>
+
+        <form id="noteForm">
+            <input
+            type="text"
+            id="noteTitle"
+            placeholder="Note title"
+            required
+            >
+
+            <select id="noteClass" required>
+            <option value="">Select a class</option>
+            </select>
+
+            <textarea
+            id="noteContent"
+            placeholder="Write your note here..."
+            rows="5"
+            required
+            ></textarea>
+
+            <button type="submit">Save Note</button>
+        </form>
+
+        <div id="noteList"></div>
+        </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>StudySpace © 2026</p>
+  </footer>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
